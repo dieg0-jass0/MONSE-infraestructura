@@ -1,0 +1,16 @@
+<div class="card">
+  <h2>Iniciar sesión</h2>
+  {{#if error}}<p class="badge pend">{{error}}</p>{{/if}}
+  <form action="/login" method="post">
+    <input type="hidden" name="_csrf" value="{{csrfToken}}" />
+
+    <label for="correo">Correo</label>
+    <input type="email" name="correo" id="correo" required />
+
+    <label for="clave">Contraseña</label>
+    <input type="password" name="clave" id="clave" required />
+
+    <button type="submit">Entrar</button>
+  </form>
+  <p><a href="/registro">Crear cuenta</a></p>
+</div>

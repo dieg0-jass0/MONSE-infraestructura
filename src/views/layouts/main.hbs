@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de actividades</title>
+</head>
+<body>
+    <style>
+            {{> navbar}}
+  body { 
+    font-family: Arial, 
+    sans-serif; 
+    background: #e9eef3; 
+    margin: 0; 
+    padding: 24px; 
+    }
+  .card { 
+    max-width: 640px; 
+    margin: 0 auto 24px; 
+    background: #fff; 
+    padding: 24px; 
+    border-radius: 16px; 
+    box-shadow: 0 4px 14px rgba(0,0,0,.08); 
+    }
+  label { 
+    display: block; 
+    margin: 12px 0 4px; 
+    font-weight: bold; 
+    font-size: 14px; 
+    }
+  input[type=text], textarea { 
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    box-sizing: border-box; 
+    }
+  .check { 
+    font-weight: normal; 
+    }
+  button { 
+    width: 100%; 
+    margin-top: 16px; 
+    padding: 12px; 
+    background: #0b5cff; 
+    color: #fff; 
+    border: 0; 
+    border-radius: 8px; 
+    font-size: 16px; 
+    cursor: pointer; }
+  table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    }
+  th, td { 
+    text-align: left; 
+    padding: 10px 8px; 
+    border-bottom: 1px solid #eee; 
+    }
+  .badge { 
+    padding: 4px 12px; 
+    border-radius: 999px; 
+    font-size: 13px; 
+    }
+  .badge.ok { 
+    background: #b7ebc6; 
+    color: #1b5e3a; 
+    }
+  .badge.pend { 
+    background: #ffe3a3; 
+    color: #7a5a00; 
+    }
+    form.inline { 
+        display: inline; 
+        }
+    .btn-del { 
+    width: auto; 
+    margin: 0 0 0 8px; 
+    padding: 4px 10px; 
+    background: #d93025; 
+    font-size: 13px; 
+    }
+</style>
+
+
+
+    {{{body}}}
+    
+</body>
+</html>

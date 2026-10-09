@@ -1,0 +1,19 @@
+<div class="card">
+<div class="card">
+  <h2>Editar actividad</h2>
+  <form action="/edit/{{act._id}}" method="post">
+    <input type="hidden" name="_csrf" value="{{csrfToken}}" />
+
+    <label for="nombre">Nombre</label>
+    <input type="text" name="nombre" id="nombre" value="{{act.nombre}}" required />
+
+    <label for="descripcion">Descripción</label>
+    <textarea name="descripcion" id="descripcion" rows="3" required>{{act.descripcion}}</textarea>
+
+    <label class="check">
+      <input type="checkbox" name="estado" value="true" {{#if act.estado}}checked{{/if}} /> La actividad ya quedó realizada
+    </label>
+
+    <button type="submit">Actualizar</button>
+  </form>
+</div>

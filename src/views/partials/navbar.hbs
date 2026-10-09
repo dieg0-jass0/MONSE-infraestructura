@@ -1,0 +1,13 @@
+<h1>navbar</h1>
+    <ul>
+    <li><a href="/">index</a></li>
+    <li><a href="/about">about</a></li>
+    <li><a href="/edit">editar</a></li>
+    </ul>
+    {{#if usuario}}
+  <span>Hola, {{usuario.nombre}}</span>
+  <form action="/logout" method="post" class="inline">
+    <input type="hidden" name="_csrf" value="{{csrfToken}}" />
+    <button type="submit">Cerrar sesión</button>
+  </form>
+{{/if}}

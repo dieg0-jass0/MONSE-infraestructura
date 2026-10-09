@@ -1,0 +1,48 @@
+<div class="card">
+  <h2>Registrar actividad</h2>
+  <form action="/actividad/add" method="post">
+    <label for="nombre">Nombre</label>
+    <input type="hidden" name="_csrf" value="{{csrfToken}}" />
+    <input type="text" name="nombre" id="nombre" required />
+
+    <label for="descripcion">Descripción</label>
+    <textarea name="descripcion" id="descripcion" rows="3" required></textarea>
+
+    <label class="check">
+      <input type="checkbox" name="estado" value="true" /> La actividad ya quedó realizada
+    </label>
+
+    <button type="submit">Guardar</button>
+  </form>
+</div>
+
+<div class="card">
+  <h2>Actividades registradas</h2>
+  <table>
+    <thead>
+      <tr><th>Nombre</th><th>Descripción</th><th>Estado</th><th></th></tr>
+    </thead>
+    <tbody>
+      {{#each actividades}}
+<tr>
+  <td>{{nombre}}</td>
+  <td>{{descripcion}}</td>
+  <td>
+    {{#if estado}}<span class="badge ok">Realizada</span>
+    {{else}}<span class="badge pend">Pendiente</span>{{/if}}
+  </td>
+  <td>
+    <a href="/edit/{{_id}}">Editar</a>
+    <form action="/delete/{{_id}}" method="post" class="inline"
+      onsubmit="return confirm('¿Eliminar esta actividad?')">
+      <input type="hidden" name="_csrf" value="{{../csrfToken}}" />
+      <button type="submit" class="btn-del">Eliminar</button>
+    </form>
+  </td>
+</tr>
+{{else}}
+<tr><td colspan="4">No hay actividades todavía.</td></tr>
+{{/each}}
+    </tbody>
+  </table>
+</div>

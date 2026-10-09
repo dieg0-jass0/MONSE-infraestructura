@@ -1,0 +1,20 @@
+<table>
+    <thead>
+        <tr>
+            <th>no.</th>
+            <th>nombre</th>
+            <th>Descripcion</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each actividad}}
+        <tr>
+            <td>{{@index}}</td>
+            <td>{{nombre}}</td>
+            <td>{{descripcion}}</td>
+            <td><button>editar</button></td>
+            <button>eliminar</button>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
